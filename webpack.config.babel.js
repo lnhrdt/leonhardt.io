@@ -12,10 +12,18 @@ module.exports = {
             {
                 loaders: ['react-hot', 'babel-loader'],
                 test: /\.js$/,
-                include: [
-                    path.join(__dirname, 'src')
-                ]
-            }
+                include: path.join(__dirname, 'src')
+            },
+            {
+                test: /\.css$/,
+                loaders: ['style', 'css'],
+                include: path.join(__dirname, 'src')
+            },
+            {
+                test: /\.sass$|\.scss$/,
+                loaders: ['style', 'css', 'sass'],
+                include: path.join(__dirname, 'src')
+            },
         ]
     },
     plugins: [
