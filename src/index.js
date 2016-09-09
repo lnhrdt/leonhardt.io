@@ -1,3 +1,8 @@
+import 'script!jquery';
+import 'what-input';
+import 'foundation-sites';
+$(() => $(document).foundation());
+
 import './styles.sass'
 
 import React from 'react';
