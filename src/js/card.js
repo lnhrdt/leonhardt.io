@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Hello extends React.Component {
+class Card extends React.Component {
     render() {
         return (
             <div className="full-page row align-center align-middle">
@@ -23,4 +23,4 @@ class Hello extends React.Component {
     }
 }
 
-export default Hello
+export default Card
