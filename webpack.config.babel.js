@@ -1,5 +1,6 @@
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import autoprefixer from 'autoprefixer';
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -16,15 +17,18 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loaders: ['style', 'css'],
+                loaders: ['style', 'css', 'postcss'],
                 include: path.join(__dirname, 'src')
             },
             {
                 test: /\.sass$|\.scss$/,
-                loaders: ['style', 'css', 'sass'],
+                loaders: ['style', 'css', 'postcss', 'sass'],
                 include: path.join(__dirname, 'src')
             },
         ]
+    },
+    postcss: () => {
+        return [autoprefixer];
     },
     plugins: [
         new HtmlWebpackPlugin({
