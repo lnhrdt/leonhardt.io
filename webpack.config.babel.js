@@ -11,8 +11,13 @@ module.exports = {
     module: {
         loaders: [
             {
-                loader: 'babel-loader',
                 test: /\.js$/,
+                loader: 'babel-loader',
+                include: path.join(__dirname, 'src')
+            },
+            {
+                test: /\.handlebars$/,
+                loader: 'handlebars-loader',
                 include: path.join(__dirname, 'src')
             },
             {
@@ -32,8 +37,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: path.join(__dirname, 'src', 'index.html')
+            template: path.join(__dirname, 'src', 'html', 'index.handlebars')
         })
     ]
 };
