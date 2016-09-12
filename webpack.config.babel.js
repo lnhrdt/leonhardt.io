@@ -1,6 +1,7 @@
 import path from 'path'
+import autoprefixer from 'autoprefixer'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import autoprefixer from 'autoprefixer';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin'
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'index.js'),
@@ -38,6 +39,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'html', 'index.handlebars')
-        })
+        }),
+        new FaviconsWebpackPlugin(path.join(__dirname, 'src', 'images', 'lion-icon.svg'))
     ]
 };
