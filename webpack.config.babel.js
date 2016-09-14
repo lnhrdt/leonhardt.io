@@ -47,6 +47,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src', 'html', 'index.handlebars')
         }),
-        new FaviconsWebpackPlugin(path.join(__dirname, 'src', 'images', 'lion-icon.svg'))
+        new FaviconsWebpackPlugin({
+            logo: path.join(__dirname, 'src', 'images', 'lion-icon.svg'),
+            prefix: 'favicons-[hash]/'
+        })
     ]
 };
