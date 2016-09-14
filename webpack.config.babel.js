@@ -28,9 +28,16 @@ module.exports = {
             },
             {
                 test: /\.sass$|\.scss$/,
-                loaders: ['style', 'css', 'postcss', 'sass'],
+                loaders: ['style', 'css', 'postcss', 'resolve-url', 'sass?sourceMap'],
                 include: path.join(__dirname, 'src')
             },
+            {
+                test: /\.(ttf|eot|svg|woff(2)?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'file-loader',
+                query: {
+                    name: 'fonts/[name]-[hash].[ext]'
+                }
+            }
         ]
     },
     postcss: () => {
